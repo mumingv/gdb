@@ -20,14 +20,14 @@ void get_args(int ac, char **av)
 void scoot_over(int jj)
 {  int k;
 
-   for (k = num_y-1; k > jj; k++)
+   for (k = num_y; k > jj; k--)
       y[k] = y[k-1];
 }
 
 void insert(int new_y)
 {  int j;
 
-   if (num_y = 0)  { // y empty so far, easy case
+   if (num_y == 0)  { // y empty so far, easy case
       y[0] = new_y;
       return;
    }
@@ -42,6 +42,7 @@ void insert(int new_y)
          return;
       }
    }
+   y[num_y] = new_y;
 }
 
 void process_data()
